@@ -33,6 +33,10 @@ brew cask install font-inconsolata
 brew install zsh zsh-completions
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+# zsh plugins
+brew install zsh-syntax-highlighting
+npm install -g npm-run.plugin.zsh
+
 # # Install trash to not accidentaly delete files folders, but rather move them to trash
 npm i -g trash-cli
 sudo chmod 777 ~/.zshrc
