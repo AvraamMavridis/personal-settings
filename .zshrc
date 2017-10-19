@@ -123,3 +123,20 @@ alias nr="npm run"
 alias nt="npm test"
 alias ns="npm start"
 alias lint="npm run lint"
+
+# Rebase current branch with master without having
+# merge commit in it
+pll(){
+  N=$1
+  if [ $# -eq 0 ] ; then
+    N=5
+  fi
+  current=$(git rev-parse --abbrev-ref HEAD)
+  git checkout master
+  git pull
+  git reset --hard origin/master
+  git checkout $current
+  git rebase master
+  git rebase -i HEAD~$N
+}
+alias pl=pll
